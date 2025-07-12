@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'Node18'  // name from Jenkins global config
-    }
-
     stages {
         stage('Clone') {
             steps {
@@ -18,7 +14,7 @@ pipeline {
             }
         }
 
-        stage('Restart Express App') {
+        stage('Run Express App') {
             steps {
                 sh 'pm2 restart express-app || pm2 start server.js --name express-app'
             }
