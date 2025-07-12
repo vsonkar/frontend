@@ -2,15 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('Install Dependencies') {
+        stage('Clone Repo') {
             steps {
-                sh 'npm install'
+                echo 'Cloning frontend repo and preparing environment...'
             }
         }
 
-        stage('Run Express App') {
+        stage('Run App') {
             steps {
-                sh 'pm2 restart express-app || pm2 start server.js --name express-app'
+                echo 'Simulating Express app start...'
+                // You can later replace this with:
+                // sh 'node server.js' or bat 'node server.js'
             }
         }
     }
