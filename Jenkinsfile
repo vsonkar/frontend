@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone') {
-            steps {
-                git 'https://github.com/vsonkar/frontend'
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
